@@ -1,6 +1,6 @@
 import { Routes, Route, Navigate } from 'react-router-dom';
 import NewPlace from './places/pages/NewPlace';
-import Users from './user/pages/User';
+import Users from './user/pages/Users';
 
 function App() {
   return (
