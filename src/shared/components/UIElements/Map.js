@@ -1,6 +1,6 @@
-// workaround without credit card
+// without credit card
 
-import React, { useRef, useEffect } from 'react';
+import { useRef, useEffect } from 'react';
 
 import './Map.css';
 
