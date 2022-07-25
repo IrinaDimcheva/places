@@ -6,10 +6,22 @@ import UserPlaces from './places/pages/UserPlaces';
 import MainNavigation from './shared/components/Navigation/MainNavigation';
 import Users from './user/pages/Users';
 import Auth from './user/pages/Auth';
+import { AuthContext } from './shared/context/auth-context';
+import { useCallback, useState } from 'react';
 
 function App() {
+  const [isLoggedIn, setIsLoggedIn] = useState(false);
+
+  const login = useCallback(() => {
+    setIsLoggedIn(true);
+  }, []);
+
+  const logout = useCallback(() => {
+    setIsLoggedIn(false);
+  }, []);
+
   return (
-    <>
+    <AuthContext.Provider value={{ isLoggedIn, login, logout }}>
       <MainNavigation />
       <main>
         <Routes>
@@ -21,7 +33,7 @@ function App() {
           <Route path='*' element={<Navigate to='/' />} />
         </Routes>
       </main>
-    </>
+    </AuthContext.Provider>
   );
 }
 
