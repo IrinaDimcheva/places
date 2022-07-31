@@ -87,7 +87,9 @@ const Auth = () => {
       // ).then((responseData) => auth.login(responseData.user.id));
     } else {
       try {
-        const responseData = await sendRequest('http://localhost:5000/api/users/signup', 'POST',
+        const responseData = await sendRequest(
+          'http://localhost:5000/api/users/signup',
+          'POST',
           JSON.stringify({
             name: formState.inputs.name.value,
             email: formState.inputs.email.value,
