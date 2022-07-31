@@ -16,7 +16,7 @@ import { AuthContext } from '../../shared/context/auth-context';
 import './PlaceForm.css';
 
 const UpdatePlace = () => {
-  const auth = createContext(AuthContext);
+  const auth = useContext(AuthContext);
   const { isLoading, error, sendRequest, clearError } = useHttpClient();
   const [loadedPlace, setLoadedPlace] = useState();
   const placeId = useParams().placeId;
@@ -67,9 +67,8 @@ const UpdatePlace = () => {
         }),
         { 'Content-Type': 'application/json' }
       );
-      console.log(auth.userId); // undefined ???
-      navigate(-1);
-      // navigate(`/${auth.userId}/places`);
+      // navigate(-1);
+      navigate(`/${auth.userId}/places`);
       // navigate('/' + auth.userId + '/places');
     } catch (err) { }
   };
