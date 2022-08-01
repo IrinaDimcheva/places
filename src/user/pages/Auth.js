@@ -81,18 +81,6 @@ const Auth = () => {
 
         auth.login(responseData.user.id);
       } catch (err) { }
-
-      // sendRequest(
-      //   'http://localhost:5000/api/users/login',
-      //   'POST',
-      //   JSON.stringify({
-      //     email: formState.inputs.email.value,
-      //     password: formState.inputs.password.value
-      //   }),
-      //   {
-      //     'Content-Type': 'application/json'
-      //   }
-      // ).then((responseData) => auth.login(responseData.user.id));
     } else {
       try {
         const formData = new FormData();
