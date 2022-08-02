@@ -54,7 +54,9 @@ const NewPlace = () => {
     formData.append('creator', auth.userId);
     try {
       await sendRequest(
-        'http://localhost:5000/api/places', 'POST', formData
+        'http://localhost:5000/api/places', 'POST', formData, {
+        Authorization: 'Bearer ' + auth.token
+      }
       );
       navigate('/');
     } catch (err) { }

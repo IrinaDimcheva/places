@@ -20,7 +20,7 @@ const Users = () => {
       } catch (err) { }
     };
     fetchUsers();
-  }, []);
+  }, [sendRequest]);
 
   return (
     <>
